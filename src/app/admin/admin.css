@@ -1,0 +1,44 @@
+/* Admin theme overrides - scoped to .admin-theme */
+.admin-theme {
+  background-color: #ffffff;
+  color: #0a0a0a;
+}
+
+.admin-theme *::selection {
+  background-color: rgba(59, 130, 246, 0.2);
+  color: #0a0a0a;
+}
+
+/* Override dark scrollbar from public site */
+.admin-theme ::-webkit-scrollbar {
+  width: 8px;
+}
+
+.admin-theme ::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+.admin-theme ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+
+.admin-theme ::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Override focus styles for admin */
+.admin-theme :focus-visible {
+  outline: none;
+  ring-color: hsl(var(--ring));
+}
+
+/* Ensure headings in admin use sans-serif, not the serif from public site */
+.admin-theme h1,
+.admin-theme h2,
+.admin-theme h3,
+.admin-theme h4,
+.admin-theme h5,
+.admin-theme h6 {
+  font-family: var(--font-inter), system-ui, sans-serif;
+}

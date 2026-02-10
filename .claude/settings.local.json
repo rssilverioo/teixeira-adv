@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx prisma migrate dev:*)",
+      "Bash(npx shadcn@latest init:*)",
+      "Bash(1 << 'EOF'\n\nEOF)",
+      "Bash(npx prisma generate:*)",
+      "Bash(npx prisma db seed:*)",
+      "Bash(npx next build:*)"
+    ]
+  }
+}

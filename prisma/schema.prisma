@@ -1,0 +1,218 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  name      String
+  email     String   @unique
+  password  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model SiteSettings {
+  id                String   @id @default("default")
+  siteName          String   @default("LEX")
+  siteTitle         String   @default("LEX - Escritorio de Advocacia Premium")
+  siteDescription   String   @default("")
+  logoUrl           String?
+  faviconUrl        String?
+  colorPrimary      String   @default("#0B0F1A")
+  colorPrimaryLight String   @default("#1A1F2E")
+  colorAccent       String   @default("#C9A227")
+  colorAccentLight  String   @default("#D4B550")
+  colorAccentDark   String   @default("#A68519")
+  keywords          String[]
+  ogImageUrl        String?
+  address           String?
+  phone             String?
+  email             String?
+  whatsapp          String?
+  workingHours      String?
+  facebookUrl       String?
+  instagramUrl      String?
+  linkedinUrl       String?
+  youtubeUrl        String?
+  copyrightText     String?
+  updatedAt         DateTime @updatedAt
+}
+
+model HeroSection {
+  id                 String   @id @default("default")
+  title              String
+  highlight          String
+  subtitle           String
+  ctaPrimaryText     String
+  ctaPrimaryLink     String
+  ctaSecondaryText   String
+  ctaSecondaryLink   String
+  backgroundImageUrl String?
+  backgroundVideoUrl String?
+  slideshowImages    String[]
+  updatedAt          DateTime @updatedAt
+}
+
+model Stat {
+  id        String   @id @default(cuid())
+  number    String
+  label     String
+  order     Int      @default(0)
+  updatedAt DateTime @updatedAt
+}
+
+model Service {
+  id        String   @id @default(cuid())
+  slug      String   @unique
+  title     String
+  excerpt   String
+  content   String
+  imageUrl  String?
+  icon      String
+  order     Int      @default(0)
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model TeamMember {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  name        String
+  role        String
+  bio         String
+  expertise   String[]
+  imageUrl    String?
+  linkedinUrl String?
+  email       String?
+  order       Int      @default(0)
+  active      Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model MediaPost {
+  id        String   @id @default(cuid())
+  slug      String   @unique
+  title     String
+  excerpt   String
+  content   String
+  author    String
+  date      DateTime
+  category  String
+  tags      String[]
+  imageUrl  String?
+  readTime  String
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Podcast {
+  id           String   @id @default(cuid())
+  title        String
+  description  String
+  episode      Int
+  guests       String[]
+  duration     String
+  date         DateTime
+  youtubeUrl   String
+  thumbnailUrl String?
+  tags         String[]
+  active       Boolean  @default(true)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model InnovationProduct {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  icon        String
+  order       Int      @default(0)
+  active      Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Value {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  icon        String
+  order       Int      @default(0)
+  updatedAt   DateTime @updatedAt
+}
+
+model Differentiator {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  order       Int      @default(0)
+  updatedAt   DateTime @updatedAt
+}
+
+model AboutPage {
+  id              String   @id @default("default")
+  title           String
+  subtitle        String
+  historyTitle    String
+  historyContent  String
+  historyImageUrl String?
+  updatedAt       DateTime @updatedAt
+}
+
+model CTASection {
+  id          String   @id @default("default")
+  title       String
+  description String
+  buttonText  String
+  buttonLink  String
+  updatedAt   DateTime @updatedAt
+}
+
+model NavItem {
+  id     String  @id @default(cuid())
+  label  String
+  href   String
+  order  Int     @default(0)
+  active Boolean @default(true)
+}
+
+model Image {
+  id        String   @id @default(cuid())
+  name      String
+  url       String
+  alt       String?
+  category  String?
+  width     Int?
+  height    Int?
+  size      Int?
+  mimeType  String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model LegalPage {
+  id        String   @id
+  title     String
+  content   String
+  updatedAt DateTime @updatedAt
+}
+
+model ContactSubmission {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  phone     String?
+  company   String?
+  subject   String
+  message   String
+  read      Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
