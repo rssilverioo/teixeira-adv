@@ -54,17 +54,17 @@ export default function Navbar({ navItems, siteName = 'LEX', logoUrl }: NavbarPr
         )}
       >
         <Container>
-          <nav className="flex items-center justify-between h-20 md:h-24">
+          <nav className="flex items-center justify-between h-20 md:h-28">
             {/* Logo */}
             <Link
               href="/"
-              className="flex items-center hover:opacity-90 transition-opacity"
+              className="flex items-center hover:opacity-90 transition-opacity py-2"
             >
               {logoUrl ? (
                 <img
                   src={logoUrl}
                   alt={siteName}
-                  className="h-10 md:h-14 w-auto object-contain"
+                  className="h-12 md:h-20 w-auto object-contain"
                 />
               ) : (
                 <span className="text-2xl md:text-3xl font-serif font-bold text-neutral-50">

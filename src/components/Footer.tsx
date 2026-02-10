@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import Container from './Container';
 import SocialLinks from './SocialLinks';
 import { getSiteSettings, getNavItems } from '@/lib/data';
@@ -19,9 +20,21 @@ export default async function Footer() {
             <div className="lg:col-span-2">
               <Link
                 href="/"
-                className="text-3xl font-serif font-bold text-neutral-50 hover:text-accent transition-colors inline-block mb-6"
+                className="inline-block mb-6"
               >
-                <span className="text-accent">{settings?.siteName?.charAt(0) || 'L'}</span>{settings?.siteName?.slice(1) || 'EX'}
+                {settings?.logoUrl ? (
+                  <Image
+                    src={settings.logoUrl}
+                    alt={settings.siteName || 'Logo'}
+                    width={280}
+                    height={80}
+                    className="h-20 w-auto object-contain"
+                  />
+                ) : (
+                  <span className="text-3xl font-serif font-bold text-neutral-50 hover:text-accent transition-colors">
+                    <span className="text-accent">{settings?.siteName?.charAt(0) || 'L'}</span>{settings?.siteName?.slice(1) || 'EX'}
+                  </span>
+                )}
               </Link>
               <p className="text-neutral-300 mb-6 max-w-md leading-relaxed">
                 {settings?.siteDescription || 'Escritório de advocacia especializado em direito digital, tecnologia e inovação. Soluções jurídicas para a nova economia.'}
