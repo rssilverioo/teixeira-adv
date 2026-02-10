@@ -12,6 +12,8 @@ export const metadata: Metadata = {
   description: 'Conversas sobre direito, tecnologia e inovação com especialistas do mercado.',
 };
 
+export const dynamic = 'force-dynamic';
+
 export default async function PodcastPage() {
   const podcasts = await getPodcasts();
 

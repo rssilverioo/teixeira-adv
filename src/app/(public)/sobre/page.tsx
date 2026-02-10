@@ -11,6 +11,8 @@ export const metadata: Metadata = {
   description: 'Conheça o LEX, escritório de advocacia especializado em direito digital, tecnologia e inovação.',
 };
 
+export const dynamic = 'force-dynamic';
+
 export default async function SobrePage() {
   const [aboutPage, values, differentiators, settings] = await Promise.all([
     getAboutPage(),

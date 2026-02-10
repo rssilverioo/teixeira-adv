@@ -28,6 +28,8 @@ export async function generateMetadata({ params }: TeamMemberPageProps): Promise
   };
 }
 
+export const dynamic = 'force-dynamic';
+
 export default async function TeamMemberPage({ params }: TeamMemberPageProps) {
   const member = await getTeamMemberBySlug(params.slug);
 

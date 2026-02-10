@@ -11,6 +11,8 @@ export const metadata: Metadata = {
   description: 'Conheça as áreas de atuação do LEX e como podemos ajudar seu negócio.',
 };
 
+export const dynamic = 'force-dynamic';
+
 export default async function ServicosPage() {
   const services = await getServices();
 

@@ -9,6 +9,8 @@ import DynamicIcon from '@/components/DynamicIcon';
 import HeroSlideshow from '@/components/HeroSlideshow';
 import { getHeroSection, getStats, getServices, getTeamMembers, getMediaPosts, getCTASection } from '@/lib/data';
 
+export const dynamic = 'force-dynamic';
+
 export default async function Home() {
   const [hero, stats, services, team, mediaPosts, cta] = await Promise.all([
     getHeroSection(),

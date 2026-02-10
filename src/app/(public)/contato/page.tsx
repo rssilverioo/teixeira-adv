@@ -11,6 +11,8 @@ export const metadata: Metadata = {
   description: 'Entre em contato com o LEX. Vamos conversar sobre como podemos ajudar seu negócio.',
 };
 
+export const dynamic = 'force-dynamic';
+
 export default async function ContatoPage() {
   const settings = await getSiteSettings();
 

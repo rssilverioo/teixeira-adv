@@ -12,6 +12,8 @@ export const metadata: Metadata = {
   description: 'Conheça os profissionais que fazem do LEX referência em advocacia para a nova economia.',
 };
 
+export const dynamic = 'force-dynamic';
+
 export default async function TimePage() {
   const team = await getTeamMembers();
 

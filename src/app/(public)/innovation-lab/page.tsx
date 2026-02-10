@@ -11,6 +11,8 @@ export const metadata: Metadata = {
   description: 'Soluções tecnológicas e produtos inovadores para otimizar a prática jurídica.',
 };
 
+export const dynamic = 'force-dynamic';
+
 export default async function InnovationLabPage() {
   const products = await getInnovationProducts();
 

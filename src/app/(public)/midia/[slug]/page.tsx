@@ -28,6 +28,8 @@ export async function generateMetadata({ params }: MediaPostPageProps): Promise<
   };
 }
 
+export const dynamic = 'force-dynamic';
+
 export default async function MediaPostPage({ params }: MediaPostPageProps) {
   const post = await getMediaPostBySlug(params.slug);
 

@@ -12,6 +12,8 @@ export const metadata: Metadata = {
   description: 'Artigos, insights e publicações do time LEX sobre direito, tecnologia e inovação.',
 };
 
+export const dynamic = 'force-dynamic';
+
 export default async function MidiaPage() {
   const media = await getMediaPosts();
 

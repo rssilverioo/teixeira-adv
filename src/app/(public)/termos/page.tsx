@@ -8,6 +8,8 @@ export const metadata: Metadata = {
   description: 'Termos de uso do site.',
 };
 
+export const dynamic = 'force-dynamic';
+
 export default async function TermosPage() {
   const page = await getLegalPage('termos');
 
