@@ -4,6 +4,8 @@ import { authOptions } from '@/lib/auth';
 import { prisma } from '@/lib/prisma';
 import { S3Client, PutObjectCommand } from '@aws-sdk/client-s3';
 
+export const dynamic = 'force-dynamic';
+
 const s3 = new S3Client({
   region: 'auto',
   endpoint: process.env.TIGRIS_ENDPOINT!,
