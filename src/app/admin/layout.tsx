@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { SessionProvider, useSession } from "next-auth/react";
 import { Toaster } from "sonner";
@@ -10,7 +11,7 @@ import {
   SidebarTrigger,
 } from "@/components/ui/sidebar";
 import { Separator } from "@/components/ui/separator";
-import { LogOut, Loader2 } from "lucide-react";
+import { LogOut, Loader2, UserCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { signOut } from "next-auth/react";
 import "./admin.css";
@@ -71,7 +72,18 @@ export default function AdminLayout({
                 <h1 className="text-sm font-semibold text-gray-900">
                   Painel Admin
                 </h1>
-                <div className="ml-auto">
+                <div className="ml-auto flex items-center gap-1">
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    asChild
+                    className="text-gray-600 hover:text-gray-900 hover:bg-gray-100 gap-2"
+                  >
+                    <Link href="/admin/profile">
+                      <UserCircle className="h-4 w-4" />
+                      Meu Perfil
+                    </Link>
+                  </Button>
                   <Button
                     variant="ghost"
                     size="sm"
